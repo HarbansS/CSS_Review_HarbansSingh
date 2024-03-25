@@ -1,0 +1,338 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+/*12 Span Grid*/
+.layout{
+  border: 2px green solid;
+  display: grid;
+  grid: 
+    "span12 span12 span12 span12 span12 span12 span12 span12 span12 span12 span12 span12 " 1fr
+    "span6 span6 span6 span6 span6 span6 . . . . . ." 1fr
+    ". . . . . span3 span3 span3 . . . ." 1fr  
+    ". . . . span1 . . . . . . ." 1fr
+  / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 8px;  
+}
+.span12 {grid-area: span12; background-color: grey;}
+.span6 {grid-area: span6; background-color: grey;}
+.span3 {grid-area: span3; background-color: grey;}
+.span1 {grid-area: span1; background-color: grey;}
+/*3x3 Grid*/
+.layout2{
+  width: 90%;
+  height: 300px;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  border: 2px solid pink;
+}
+/*Holy Grail*/
+.layout3{
+  border: 2px solid red;
+  width: 99%;
+  height: 300px;
+  display: grid;
+  grid:
+    "header header header" auto
+    "leftSide body rightSide" 1fr
+    "footer footer footer" auto
+    / auto 1fr auto;
+    gap: 8px;
+  .x3{
+    border: 1px solid red;
+    background-color: #ffffb3;
+  }
+}
+.header {grid-area: header; background-color: grey;}
+.leftSide {grid-area: leftSide; background-color: green;}
+.body {grid-area: body; background-color: blue;}
+.rightSide {grid-area: rightSide; background-color: green;}
+.footer {grid-area: footer; background-color: grey;}
+/*Sidebar*/
+.layout4{
+  border: 2px solid red;
+  width: 90%;
+  height: 300px;
+  display: grid;
+  grid:
+    "sidebar body1" 1fr
+  / auto 1fr;
+  gap: 8px;
+}
+
+.sidebar{grid-area: sidebar; background-color: grey;}
+.body1{grid-area: body1; background-color: orange;}
+/*HeaderMainFooter*/
+.layout5{
+  border: 2px solid red;
+  width: 90%;
+  height: 300px;
+  display: grid;
+  grid:
+    "header" auto
+    "main" 1fr
+    "footer" auto
+    /1fr;
+    gap: 8px;
+}
+.main{grid-area: main; background-color: orange;}
+/*I used the old header and footer for this*/
+/**/
+.layout6{
+  border: 2px solid red;
+  width: 99%;
+  height: 300px;
+  display: grid;
+  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-template-columns: repeat(3, 1fr) ;
+  gap: 8px;
+}
+
+/*Infinite Rows with Areas*/
+.layout7{
+  border: 2px solid red;
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-template-columns: repeat(3, 1fr) ;
+  gap: 8px; 
+}
+.col1Last1{
+  grid-column: 1 / -1;
+  background-color: orange;
+}
+/*flexbox rows*/
+.layout8{
+  border: 2px solid red;
+  display: flex;
+  gap: 16px;
+}
+.flrow{
+  border: 1px solid blue;
+  background-color: orange;
+}
+/*flexbox ROW wrap*/
+.layout9{
+  border: 2px solid orange;
+  display: flex;
+  gap:16px;
+  flex-wrap: wrap;
+}
+/*flexbox fitting the space*/
+.layout10{
+  border: 2px solid red;
+  display: flex;
+  gap: 16px
+}
+.grow1{
+  flex-grow:1;
+  background-color: brown;
+  border: 1px solid black;
+}
+/*Flexbox Fit to remaining space*/
+.layout11{
+  border: 2px solid red;
+  display: flex;
+  gap: 16px;
+}
+/*Flexbox Separate*/
+.layout12{
+  border: 2px solid red
+  display: flex;
+  gap: 16px;
+}
+.marginLeft{
+  margin-left: auto;
+  background-color: brown;
+  border-bottom: 1px solid black;
+}
+/*harbans*/
+.layout13{
+  border: 2px solid red;
+  display: grid;
+  grid: 
+  "leftSide body rightSide" 1fr
+  "leftSide body rightSide" 1fr
+  "leftSide body rightSide" 1fr
+  / auto 1fr;
+  gap: 16px;
+}
+
+
+/*ANIMATION*/
+
+/* translate method*.body*/
+.translate{
+  width:300px;
+  height:100px;
+  background-color: orange;
+  border: 1px solid black;
+  transform: translate(50px, 50px);
+}
+/* rotate() method)*/
+.rotate{
+  width:100px;
+  height:100px;
+  background-color: orange;
+  border: 1px solid black;
+}
+#myDiv{
+  transform: rotate(20deg);
+}
+/* scale method */
+.scale{
+  width:100px;
+  height:100px;
+  background-color: orange;
+  border: 1px solid black;
+  margin:100px;
+  transform: scale(2, 3);
+}
+/* ScaleX method*/
+.scaleX{
+  width:100px;
+  height:100px;
+  background-color: orange;
+  border: 1px solid black;
+  margin:100px;
+  transform: scaleX(2);
+}
+/* ScaleY method*/
+.scaleY{
+  width:100px;
+  height:100px;
+  background-color: orange;
+  border: 1px solid black;
+  margin:100px;
+  transform: scaleY(3);
+}
+/*skew method*/
+.skew{
+  width: 300px;
+  height: 100px;  
+  background-color: orange;
+  border: 1px solid black;
+  transform: skew(10deg, 10deg)
+}
+.skewX{
+  width: 300px;
+  height: 100px;  
+  background-color: orange;
+  border: 1px solid black;
+  transform: skewX(20deg)
+}
+.skewY{
+  width: 300px;
+  height: 100px;  
+  background-color: orange;
+  border: 1px solid black;
+  transform: skewY(20deg)
+}
+/* matrix method (scaleX, skewY, skewX, scaleY*/
+#matrix{
+  transform: matrix(1,-0.3,0,1,0,0);
+}
+#matrix2D{
+  transform: matrix(1, 0, 0.5, 1, 150, 0);
+}
+
+  /* rotate in 3D*/
+#rotate3DX{
+  transform: rotateX(150deg);
+}
+#rotate3DY{
+  transform: rotateY(150deg);
+}
+#rotate3DZ{
+  transform: rotateZ(90deg);
+}
+/*animate it
+.rotate:hover {
+  transform: translate3d(20px, 20px, 20px);
+}
+*/
+
+/* to decorate any div class with perry*/
+.perry{
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  border: 1px solid black;
+  transition: width 2s, height 2s, background-color 3s;
+}
+/*transitions*/
+#transition:hover{
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+/*Linear*/
+#linear:hover{
+  width: 200px;
+  height: 200px;
+  background-color: red;
+ transition-timing-function: linear;
+  transition-delay: 0.5s;
+}
+/*Ease*/
+#ease:hover{
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  transition-timing-function: ease;
+  transition-delay: 0.5s;
+}
+/*Ease In*/
+#easeIn:hover{
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  transition-timing-function: ease-in;
+  transition-delay: 0.5s;
+}
+/*Ease Out*/
+#easeOut:hover{
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  transition-timing-function: ease-out;
+  transition-delay: 0.5s;
+}
+/*Ease In Out*/
+#easeInOut:hover{
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0.5s;
+}
+
+/*Animations*/
+/*
+@keyframes
+animation-name
+animation-duration
+animation-delay
+animation-iteration-count
+animation-direction
+animation-timing-function
+animation-fill-mode
+animation
+*/
+
+/*the animation code*/
+
+@keyframes example {
+  from{background-color: orange;}
+  to{background-color: yellow;}
+}
+/* the element to apply animation to */
+.cheeseCake{
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  animation-name: example;
+  animation-duration: .5s;
+}
